@@ -2,21 +2,35 @@
 
 Неофіційний українізатор для **Axiom Verge (2015)**. [Завантажити Windows-пакет з інсталятором](AxiomVerge-UA-Windows-Installer-v1.zip).
 
-## Встановлення у Windows
+## Windows
 
-Потрібні Node.js і Python 3 (з launcher-командою `py`). Під час першого запуску потрібен інтернет, щоб автоматично встановити залежності JSZip і Pillow.
+Файли .bat і .ps1 у цьому пакеті призначені для Windows: .bat запускається подвійним клацанням, а .ps1 — сценарій Windows PowerShell, який виконує основну роботу інсталятора. Це не Linux-скрипти.
+
+Потрібні Node.js і Python 3 (з launcher-командою py). Під час першого запуску потрібен інтернет, щоб автоматично встановити залежності JSZip і Pillow.
 
 1. Завантаж ZIP за посиланням вище та розпакуй його.
-2. Двічі клацни `Install-AxiomVerge-UA.bat`.
-3. Якщо гра не знайдеться автоматично, вибери її папку з файлом `AxiomVerge.exe` і підтверди встановлення.
+2. Двічі клацни Install-AxiomVerge-UA.bat.
+3. Якщо гра не знайдеться автоматично, вибери її папку з файлом AxiomVerge.exe і підтверди встановлення.
 
-Інсталятор збере й застосує файли локально. Оригінальні EXE та шрифти зберігаються в папці `Axiom Verge UA backup` у папці гри. Для відновлення двічі клацни `Restore-AxiomVerge-UA.bat`. Патчер приймає лише перевірену версію EXE; ігрові EXE/XNB не розповсюджуються.
+Інсталятор збере й застосує файли локально. Оригінальні EXE та шрифти зберігаються в папці Axiom Verge UA backup у папці гри. Для відновлення двічі клацни Restore-AxiomVerge-UA.bat. Патчер приймає лише перевірену версію EXE; ігрові EXE/XNB не розповсюджуються.
+
+## Linux
+
+Установчих .bat/.ps1 скриптів для Linux немає. Потрібні Node.js, npm, Python 3 і pip. Розпакуй Windows-пакет, відкрий термінал у папці AxiomVerge-UA-Windows-Installer-v1 і виконай:
+
+```sh
+npm install
+python3 -m pip install --user -r requirements.txt
+npm run patch -- '/шлях/до/Axiom Verge'
+```
+
+Заміни шлях на папку гри, де лежить AxiomVerge.exe. Патчер створить файли патча у папці гри; перед ручною заміною збережи оригінали. Патчер приймає лише перевірену версію EXE.
 
 ## Перевірка VirusTotal
 
-Попередній вихідний архів [`AxiomVerge-UA-source-v1.zip`](AxiomVerge-UA-source-v1.zip) отримав результат **0 із 66 виявлень**. [Звіт VirusTotal](https://www.virustotal.com/gui/file-analysis/YzdmNWI3YTdmMzUwZDc0YjM1ZTMwNTE5NjBmZWZlMzE6MTc5NDE0NjY1Ng==).
+Попередній вихідний архів [AxiomVerge-UA-source-v1.zip](AxiomVerge-UA-source-v1.zip) отримав результат **0 із 66 виявлень**. [Звіт VirusTotal](https://www.virustotal.com/gui/file-analysis/YzdmNWI3YTdmMzUwZDc0YjM1ZTMwNTE5NjBmZWZlMzE6MTc5NDE0NjY1Ng==).
 
-SHA-256 перевіреного архіву: `6354c1a44531156857043f10bda2f7df3ae097ec7ff932eb32071b9500bf3ec4`. Новий Windows-пакет з інсталятором ще не сканувався. Результат попереднього сканування не гарантує повної безпеки.
+SHA-256 перевіреного архіву: 6354c1a44531156857043f10bda2f7df3ae097ec7ff932eb32071b9500bf3ec4. Новий Windows-пакет з інсталятором ще не сканувався. Результат попереднього сканування не гарантує повної безпеки.
 
 ## Склад
 
